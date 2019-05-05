@@ -1,0 +1,2 @@
+-Fokus på sorteringsalgoritmer ch9
+-Fokus på trær ch10+

@@ -1,0 +1,7 @@
+CREATE TABLE competitor (
+	username VARCHAR(16) UNIQUE,
+	email VARCHAR(69),
+	password VARCHAR(130),
+	PRIMARY KEY (username)
+
+);

@@ -1,0 +1,65 @@
+sr1.
+ex1
+linear
+3,8,12,34,54 feil fant ikke 45. 5 total
+3, 8, 12, 34, 54 fant 54. 5 total
+binær
+middle: 54. 45 < 54
+leftmiddle of middle: 12. 45 > 12
+rightmiddle of leftmiddle of middle: 34. No more. Failed. 3 total
+middle: 54. Found 54. 1 total.
+
+ex2
+selection sort n^2
+for each n find the smallest/biggest and switch
+insertion sort n^2
+|3 9 6 1 2
+3 |9 6 1 2
+3 6 |9 1 2
+1 3 6 |9 2
+1 2 3 6 |9
+
+Bubblesort
+|3 9| 6 1 2
+3 |9 6| 1 2
+3 6 |9 1| 2
+3 6 1 |9 2|
+3 6 1 2 9
+And then you check n-1 again repeating till sorted. 
+
+quicksort
+3 9 6 1 2
+We choose 6 as our partition element. We would then rearrange the list swapping the elements that are less than 90 to the left sie and those that are greater than 90 to the right side, which would yield:
+3 1 2 9 6
+Then we apply the quick sort algorithm separately to both partitions.
+1 and 9
+2 1 3 6 9
+1 2 3 6 9
+
+radix sort
+Sort by key not by comparisons.
+three digit numbers in the decimal system. Sort a list.
+{829, 129, 333, 123, 425, 276}
+First check 1s: (Key is from 0-9: 10)
+0: ø 1: ø 2: ø 3: 333, 123 4: ø 5: 425 6: 276 7: ø 8: ø 9: 829, 129
+{333, 123, 425, 276, 829, 129}
+Then check 10s ( Go through the 1s list ):
+0: ø 1: ø 2: 123, 425, 829, 129 3: 333 4: ø 5: ø 6: ø 7: 276 8: ø 9: ø 
+{123, 425, 829, 129, 333, 276}
+Then go through the 10s list and check 100s:
+0: ø 1: 123, 129 2: 276 3: 333 4: 425 5: ø 6: ø 7: ø 8: 829 9: ø
+Result:
+{123, 129, 276, 333, 425, 829}
+
+		34
+	      3    45
+	    1   32    87
+	      12    65
+                17
+
+		  34
+	      3        45  
+	    1   12   32   87
+	     	   17  65
+           
+                

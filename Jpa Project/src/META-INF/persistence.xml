@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+    version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+    <persistence-unit name="todos" transaction-type="RESOURCE_LOCAL">
+        <class>no.hvl.dat108.model.Competitor</class>
+        <class>no.hvl.dat108.model.Alias</class>
+        <class>no.hvl.dat108.model.Car</class>
+ <properties>
+  <property name="hibernate.id.new_generator_mappings" value="true" />
+  <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+  <property name="javax.persistence.jdbc.url"
+    value="jdbc:postgresql://data1.hib.no:5432/h571727" />
+  <property name="javax.persistence.jdbc.user" value="h571727" />
+  <property name="javax.persistence.jdbc.password" value='MM00n"%#R' />
+
+  <!-- EclipseLink should create the database schema automatically -->
+  <!--  <property name="eclipselink.ddl-generation" value="create-tables" />-->
+  <property name="eclipselink.ddl-generation.output-mode" value="both" /> 
+  <!-- Det stod "database" som value ovenfor før -->
+ </properties>
+
+    </persistence-unit>
+</persistence>

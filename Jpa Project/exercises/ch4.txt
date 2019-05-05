@@ -1,0 +1,89 @@
+ex1.
+public interface Student {
+
+	private Student next;
+	private String name;
+	private int code;
+	
+	public void setNext(Student next);
+	public Student next();
+	public boolean hasNext();
+	public void remove();
+}
+ex2.
+hasNext(), next(), get() and remove().
+
+ex3.
+
+public class StudentList {
+	
+	private Student top;
+	
+	public StudentList(){
+		top = null;
+	}
+	
+	public StudentList(Student top) {
+		this.top = top;
+	}
+
+	public void push(Student top){
+		if(isEmpty()){
+			this.top = top;
+			return;
+		}
+		top.setNext(this.top);
+		this.top = top;
+	}
+	
+	public Student peek(){
+		return top;
+	}
+
+	public Student pop(){
+		if(!isEmpty()){
+			Student ret = top;
+			top = top.next();
+			return ret;
+		}
+		return null;
+	}
+
+	public boolean isEmpty(){
+		return top == null;
+	}
+}
+
+
+ex 4.
+StudentList list = new StudentList();
+...
+Student fifth;
+for(int i = 0; i < 5; i++){
+	if(list.peek() == null)
+		break;
+	if(i == 4){
+		fifth = list.pop();
+		break;
+	} else {
+		list.pop();
+	}
+}
+
+ex5.
+
+//bygger på forrige
+
+public StudentList traverse(Student e) {
+	StudentList list;
+	if(e.hasNext())
+		list = traverse(e.next());
+	 else 
+		return new StudentList(e);
+	list.push(e);
+	return list;
+}
+
+
+
+

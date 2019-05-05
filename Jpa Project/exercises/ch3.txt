@@ -1,0 +1,128 @@
+1. It depicts something called class hierarchy where children inheirates from an abstact data type.
+2. An object is the perfect mechanism for creating a collection because, if it is designed correctly, the internal workings of an object are encapsulated from the rest of the system.
+   The only interaction a user has with an object should be through its public methods, which represent the services that the object provides.
+3. A STACK is a linear collection whose elements are added and removed from the same end. We say that a stack is processed in a last in, first out manner.
+   Stacking clean dinnerplates; you place new plates on top and get a plate on the top. You can also peek and see which plate on the top, but you can't see everything on top of the plates
+   under. 
+4. 
+Y = 15, {20}
+Y = 45, {20, 35, 10, 25, 15, 45}
+
+5.
+a) Y = 45
+b) Y = 45
+   Z = 15
+c) Y = 30 / 45 (Kommer an på om den ret noe)
+   Z = 30
+
+6. public abstract class Bag<T> {
+	private abstract T current;
+	private abstract ArrayList<T> list;
+
+	public abstract void push(T elem);
+	public abstract T pop();
+	public abstract T peek();
+	public boolean isEmpty() {
+		return list.size() == 0;
+	}
+}
+Eller man kan kanskje bruke en interface.
+
+7. 
+private Bag<String> bag = new Bag<String>();
+bag.push("Money");
+System.out.println("The added item is called: " + bag.peek());
+
+8.
+If you manage to use backspace faster than the computer can compute then you can add every backspace inputed to a stack and remove a character for every pop one can do. Or you can add every
+character removed onto a stack and re-add characters if the user presses Ctrl-Z.
+
+9.
+Start at index 0.		   {21, 32, 11, 54, 90}
+Add to stack: 21.
+Peek (Only removeable object): 21. {32, 11, 54, 90}
+Add to stack: 32.
+Peek (Only removeable object): 32. {11, 54, 90}
+Add to stack: 11.
+Peek (Only removeable object): 11. {54, 90}
+Add to stack: 54.
+Peek (Only removeable object): 54. {90}
+Add to stack: 90.
+Peek (Only removeable object): 90. Ø
+Start at index 0.
+Pop and add to now empty list: 90 {90}
+Pop and add to now empty list: 54 {90, 54}
+Pop and add to now empty list: 11 {90, 54, 11}
+Pop and add to now empty list: 32 {90, 54, 11, 32}
+Pop and add to now empty list: 21 {90, 54, 11, 32, 21}
+
+
+pp 3.4
+public ArrayStack(int initialCapacity) {
+	// top being at -1 indicates that the stack is empty;
+	top = -1;
+	stack = (T[]) ( new Object[initialCapacity] );
+}
+
+@Override
+public boolean isEmpty(){
+	return top == -1;
+}
+
+public T peek() throws EmptyCollectionException {
+	if (isEmpty())
+		throw new EmptyCollectionException("stack");
+	
+	return stack[top];
+}
+
+pp 3.5
+
+public class DropOutStack<T> implements StackADT<T>{
+
+	private T[] stack;	
+	private int top;
+	private int size;
+	private int amount;
+	
+	public DropOutStack(int size){
+		this.size = size;
+		stack = new T[size];
+		top = -1;
+		amount = 0;
+	}
+
+	public void isEmpty(){
+		return amount == 0;
+	}
+
+	public void push(T elem){
+		top = (top + 1) % size;
+		if(amount < size)
+			amount++;
+		stack[top] = elem;
+	}
+	
+	public T peek(){
+		if(isEmpty())
+			return null;
+		return stack[top];
+	}
+
+	public T pop(){
+		T peek = peek();
+		if(peek != null){
+			amount--;
+			stack[top] = null;
+			if(top == 0 && amount > top)
+				top = size - 1;
+			else
+				top--;
+		}
+		return peek;
+	}
+}
+
+
+
+

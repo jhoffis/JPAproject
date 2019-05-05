@@ -1,0 +1,22 @@
+BinarySearchTreeADT:
+addelement(T element): void
+removeElement(T targetElement) : T
+removeAllOccurances(T targetElement) : void
+removeMin() : T
+removeMax() : T
+findMin() : T
+findMax() : T
+
+BinaryTreeADT:
+getRootElement() : T
+isEmpty(): boolean
+size() : int
+contains(T targetElement) : boolean
+find(T targetElement) : T
+toString() : String
+iterator : Iterator<T>
+iteratorInOrder : Iterator <T>
+iteratorPreOrder() : Iterator<T>
+iteratorPostOrder() : Iterator<T>
+iteratorLevelOrder() : Iterator<T>
+
